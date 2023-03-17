@@ -9,17 +9,17 @@ public class EmployeeService {
 	
 	private List<Employee> employees = new ArrayList<Employee>();
 	
+	employees.add(new Employee("1","raj","kumar","rajkumar@gmail.com",987654321,"15th march",25000));
+	employees.add(new Employee("2","veera","kumar","veerakumar@gmail.com",123456789,"12th feb",35000));
 	
-	public List<Employee> fetchAll() {
+	public List<Employee> employees() {
 
-		employees.add(new Employee("1","raj","kumar","rajkumar@gmail.com",987654321,"15th march",25000));
-		employees.add(new Employee("2","veera","kumar","veerakumar@gmail.com",123456789,"12th feb",35000));
 		
         return employees;
     }
 	
-	public Employee fetchBy(String id) throws NotFoundException {
-        for (Employee emp :  fetchAll()) {
+	public Employee get(String id) throws NotFoundException {
+        for (Employee emp :  employees()) {
              if (id == emp.getEmpId()) {
                 return emp;
              }else{
