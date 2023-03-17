@@ -44,6 +44,15 @@ public class EmployeeResource {
 	 	        userService.delete(id);
 	 	        
 	 	    }
+	
+		 		
+	 		@GET
+	 		@Path("/emp/empSalary/{id}")
+		    public String getTax(@PathParam("id") String id) throws NotFoundException {
+		        return userService.getTax(id);
+		    }
+		 
+
 	 
 	
 	
