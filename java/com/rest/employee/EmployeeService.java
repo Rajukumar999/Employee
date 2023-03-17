@@ -12,14 +12,14 @@ public class EmployeeService {
 	employees.add(new Employee("1","raj","kumar","rajkumar@gmail.com",987654321,"15th march",25000));
 	employees.add(new Employee("2","veera","kumar","veerakumar@gmail.com",123456789,"12th feb",35000));
 	
-	public List<Employee> employees() {
+	public List<Employee> fetchAll() {
 
 		
         return employees;
     }
 	
 	public Employee get(String id) throws NotFoundException {
-        for (Employee emp :  employees()) {
+        for (Employee emp :  employees) {
              if (id == emp.getEmpId()) {
                 return emp;
              }else{
@@ -44,7 +44,7 @@ public class EmployeeService {
     }
 	 
 	 public void delete(String id) throws NullPointerException {
-		 for (Employee emp :  fetchAll()) {
+		 for (Employee emp :  employees) {
              if (id == emp.getEmpId()) {
             	 employees.remove(emp);
              }else{
