@@ -13,6 +13,7 @@ public class Employee implements Serializable{
 	
 	
 	public Employee(String empId, String fName, String LName,String email,int phoneNo,String doj,int salary) {
+	this.empId =empId
         this.doj = doj;
         this.fName = fName;
         this.LName = LName;
