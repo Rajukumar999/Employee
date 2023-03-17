@@ -52,5 +52,26 @@ public class EmployeeService {
              }
          }
 	    }
-	
+			public String getTax(String id) {
+		for(Employee emp :  employees) {
+			  if (id == emp.getEmpId()) {
+				  int empSal=(int)emp.getSalary();	
+				  if(empSal<=250000) {
+					  return emp.getEmpId()+emp.getfName()+emp.getLName()+emp.getSalary()*12;
+				  }
+				  if(empSal>250000 && empSal <=500000) {
+					  return emp.getEmpId()+emp.getfName()+emp.getLName()+emp.getSalary()*12+emp.getSalary()*0.05*12+emp.getSalary()*0.02*12;
+				  }
+				  if(empSal>500000 && empSal <=1000000) {
+					  return emp.getEmpId()+emp.getfName()+emp.getLName()+emp.getSalary()*12+emp.getSalary()*0.1*12+emp.getSalary()*0.02*12;
+				  }
+				  if(empSal>1000000) {
+					  return emp.getEmpId()+emp.getfName()+emp.getLName()+emp.getSalary()*12+emp.getSalary()*0.2*12+emp.getSalary()*0.02*12;
+				  }
+			  }
+			  
+			  }		
+		return null;
+	}
+
 }
