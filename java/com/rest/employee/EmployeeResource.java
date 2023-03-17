@@ -19,7 +19,7 @@ public class EmployeeResource {
 	    @Path("emp/{id}")
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Employee get(@PathParam("id") String id) throws NotFoundException {
-	        return userService.fetchBy(id);
+	        return userService.get(id);
 	    }
 	 
 	 		@POST
